@@ -1,4 +1,6 @@
 const choices = ["rock", "paper", "scissors"];
+var playerScore = 0;
+var computerScore = 0;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
@@ -11,18 +13,30 @@ function playRound() {
     const computerSelection = getComputerChoice();
 
     if (computerSelection == playerSelection) {
-        console.log("It's a tie.");
+        alert("It's a tie.");
     } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
-        return console.log("Paper covers rock. You win!");
+        alert("Paper covers rock. You win!");
+        playerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
     } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") {
-        return console.log("Rock crushes scissors. You lose...");
+        alert("Rock crushes scissors. You lose...");
+        computerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
     } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") {
-        return console.log("Scissors cuts paper. You lose...");
+        alert("Scissors cuts paper. You lose...");
+        computerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
     } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") {
-        return console.log("Rock crushes scissors. You win!");
+        alert("Rock crushes scissors. You win!");
+        playerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
     } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") {
-        return console.log("Paper covers rock. You lose...");
-    } else return console.log("Scissors cuts paper. You win!");
+        alert("Paper covers rock. You lose...");
+        computerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
+    } else  alert("Scissors cuts paper. You win!");
+            playerScore++;
+            return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
     
 
 }
@@ -31,7 +45,12 @@ function game() {
     for (let rounds = 0; rounds < 5; rounds++) {
         if (rounds < 5) {
             playRound();   // Needs work...
-        } else return console.log("Game over!"); 
+        } else return alert("Game Over..");
     }
+    if (playerScore > computerScore) {
+        return alert("You win! The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
+    } else return alert("You loose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
     // Set it to keep score and determine a winner
 }
+
+game();
