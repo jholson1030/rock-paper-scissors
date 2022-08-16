@@ -25,4 +25,13 @@ function playRound() {
     } else return console.log("Scissors cuts paper. You win!");
     
 
-} playRound();
+}
+
+function game() {
+    for (let rounds = 0; rounds < 5; rounds++) {
+        if (rounds < 5) {
+            playRound();   // Needs work...
+        } else return console.log("Game over!"); 
+    }
+    // Set it to keep score and determine a winner
+}
