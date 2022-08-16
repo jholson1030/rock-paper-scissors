@@ -13,7 +13,7 @@ function playRound() {
     const computerSelection = getComputerChoice();
 
     if (computerSelection == playerSelection) {
-        alert("It's a tie.");
+        return alert("It's a tie.");
     } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
         alert("Paper covers rock. You win!");
         playerScore++;
@@ -34,9 +34,11 @@ function playRound() {
         alert("Paper covers rock. You lose...");
         computerScore++;
         return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
-    } else  alert("Scissors cuts paper. You win!");
-            playerScore++;
-            return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
+    } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") {
+        alert("Scissors cuts paper. You win!");
+        playerScore++;
+        return alert("Your Score: " + playerScore + "\nComputer Score: " + computerScore);
+    } else return alert("That is not a valid option. \nEnter 'rock, paper, or scissors'");    
     
 
 }
@@ -44,13 +46,14 @@ function playRound() {
 function game() {
     for (let rounds = 0; rounds < 5; rounds++) {
         if (rounds < 5) {
-            playRound();   // Needs work...
+            playRound();   
         } else return alert("Game Over..");
     }
     if (playerScore > computerScore) {
         return alert("You win! The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
-    } else return alert("You loose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
-    // Set it to keep score and determine a winner
+    } else if (playerScore < computerScore) {
+        return alert("You loose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
+    } else return alert("It's a tie...");    
 }
 
 game();
