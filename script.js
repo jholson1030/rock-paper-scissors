@@ -44,14 +44,12 @@ function playRound() {
 }
 
 function game() {
-    for (let rounds = 0; rounds < 5; rounds++) {
-        if (rounds < 5) {
-            playRound();   
-        } else return alert("Game Over..");
+    while (playerScore < 5 && computerScore < 5) {
+        playRound();
     }
-    if (playerScore > computerScore) {
+    if (playerScore == 5) {
         return alert("You win! The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
-    } else if (playerScore < computerScore) {
+    } else if (computerScore == 5) {
         return alert("You loose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
     } else return alert("It's a tie...");    
 }
