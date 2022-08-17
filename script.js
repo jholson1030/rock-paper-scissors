@@ -50,7 +50,7 @@ function game() {
     if (playerScore == 5) {
         return alert("You win! The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
     } else if (computerScore == 5) {
-        return alert("You loose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
+        return alert("You lose... The final score is: \nYou: " + playerScore + "\nComputer: " + computerScore);
     } else return alert("It's a tie...");    
 }
 
