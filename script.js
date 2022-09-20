@@ -54,4 +54,3 @@ function game() {
     } else return alert("It's a tie...");    
 }
 
-game();
