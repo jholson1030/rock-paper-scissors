@@ -17,11 +17,11 @@ document.getElementById('rock').addEventListener('click', function () {
     if (computerSelection == 'paper') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
-        document.querySelector('computer-score').textContent = `Computer's score is: ${computerScore}`;
+        document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
     } else if (computerSelection == 'scissors') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, rock crushes scissors.";
-        document.querySelector('player-score').textContent = `Your score is: ${playerScore}`;
+        document.getElementById('player-score').innerHTML = `Your score is: ${playerScore}`;
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
@@ -30,11 +30,11 @@ document.getElementById('paper').addEventListener('click', function () {
     if (computerSelection == 'rock') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, paper covers rock.";
-        document.querySelector('player-score').textContent = `Your score is: ${playerScore}`;
+        document.getElementById('player-score').innerHTML = `Your score is: ${playerScore}`;
     } else if (computerSelection == 'scissors') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, scissors cuts paper.";
-        document.querySelector('computer-score').textContent = `Computer's score is: ${computerScore}`;
+        document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
@@ -43,11 +43,11 @@ document.getElementById('scissors').addEventListener('click', function () {
     if (computerSelection == 'rock') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
-        document.querySelector('computer-score').textContent = `Your score is: ${computerScore}`;
+        document.getElementById('computer-score').innerHTML = `Your score is: ${computerScore}`;
     } else if (computerSelection == 'paper') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, scissors cuts paper.";
-        document.querySelector('player-score').textContent = `Computer's score is: ${playerScore}`;
+        document.getElementById('player-score').innerHTML = `Computer's score is: ${playerScore}`;
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
