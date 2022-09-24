@@ -115,6 +115,8 @@ function game() {
     document.getElementById('rock').style.display = 'block';
     document.getElementById('paper').style.display = 'block';
     document.getElementById('scissors').style.display = 'block';
+    // Will clear the result from a previous game
+    document.querySelector('.result').textContent = "";
 }
 
 
