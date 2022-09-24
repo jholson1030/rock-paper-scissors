@@ -37,10 +37,10 @@ function checkWinner() {
     // Make so that the game stops at 5 points
     if (playerScore == 5) {
         endGame();
-        document.querySelector('.result').textContent = "Congrats! You're the winner!!!"; 
+        document.querySelector('.result').textContent = "Congrats! You're the winner!!! <;^)"; 
     } else if (computerScore == 5) {
         endGame();
-        document.querySelector('.result').textContent = "Wow, you're a loser..";
+        document.querySelector('.result').textContent = "Wow, you're a loser.. :(((";
     } 
 }
 
