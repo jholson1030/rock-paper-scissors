@@ -27,8 +27,6 @@ function endGame() {
     document.querySelector('.start-game').style.display = 'flex';
     playerScore = 0;
     computerScore = 0;
-    document.getElementById('player-score').innerHTML = `Computer's score is: ${computerScore}`;
-    document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
 }
 
 // This will check to see if there is a winner
@@ -117,6 +115,9 @@ function game() {
     document.getElementById('scissors').style.display = 'block';
     // Will clear the result from a previous game
     document.querySelector('.result').textContent = "";
+    // Will clear the score from the previous game
+    document.getElementById('player-score').innerHTML = `Your score is: ${computerScore}`;
+    document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
 }
 
 
