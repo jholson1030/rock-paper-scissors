@@ -2,13 +2,27 @@
 <html lang="eng">
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
-        
+        <meta name="viewport" content="width= device-width, initial-scale= 1">
+        <title>Rock Paper Scissors- With UI</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script src="script.js"></script>
-        <h1>Rock Paper Scissors by: John Olson</h1>
-        <p>This is The Odin Project's first JavaScript project. Later on I want to come back to this and stylize it
-            to make it more interactive. I hope you enjoy!</p>
+        <div class="title">
+            <h1>Rock Paper Scissors.....to the DEATH!!</h1>
+            <button class="start-game" onclick="game()">Click to Play</button>
+        </div>
+        <h2 id="player-score">Your score is: </h2>
+        <h2 id="computer-score">Computer's score is: </h2>
+        <div class="result"></div>
+        <div class="player">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div class="computer">
+            <!--Have the corresponding choice display what the computer picked-->
+            <h2 id="comp-choice">The computer picked: </h2>
+        </div>
+        <script src="script.js"></script>    
     </body>
 </html>
