@@ -119,9 +119,3 @@ function game() {
     document.getElementById('player-score').innerHTML = `Your score is: ${computerScore}`;
     document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
 }
-
-
-
-function resetGame() {
-    // Will restart the game
-}
