@@ -17,8 +17,24 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+// This will end the game
+
+function endGame() {
+    document.getElementById('rock').style.display = 'none';
+    document.getElementById('paper').style.display = 'none';
+    document.getElementById('scissors').style.display = 'none';
+    document.getElementById('comp-choice').style.display = 'none';
+    document.querySelector('.start-game').style.display = 'block';
+    playerScore = 0;
+    computerScore = 0;
+}
+
+
 
 // Turn these into functions with possible outcomes (2 each)
+
+// May have to refactor this...
+
 document.getElementById('rock').addEventListener('click', function () {
     const computerSelection = getComputerChoice();
     document.getElementById('comp-choice').style.display = 'block';
@@ -73,17 +89,18 @@ document.getElementById('scissors').addEventListener('click', function () {
 
 function game() {
     // When the user clicks the start button it goes away
-    document.querySelector('.start-game').style.display = "none";
+    document.querySelector('.start-game').style.display = 'none';
     // And the RPS buttons display
     document.getElementById('rock').style.display = 'block';
     document.getElementById('paper').style.display = 'block';
     document.getElementById('scissors').style.display = 'block';
-    if (playerScore == 5) {
-        document.querySelector('.result').textContent = "You're the winner!!!";
-        document.querySelector('.reset-game').style.display = "block";
-    } else if (computerScore == 5) {
-        document.querySelector('.result').textContent = "You are a total loser..";
-        document.querySelector('.reset-game').style.display = "block";
+    // Make so that the game stops at 5 points
+     if (playerScore == '5') {
+        endGame();
+        document.querySelector('.result').textContent = "Congrats! You're the winner!!!"; 
+    } else if (computerScore == '5') {
+        endGame();
+        document.querySelector('.result').textContent = "Wow, you're a loser..";
     } 
 }
 
