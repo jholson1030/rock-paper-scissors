@@ -4,6 +4,13 @@ const choices = ["rock", "paper", "scissors"];
 var playerScore = 0;
 var computerScore = 0;
 
+// Set the RPS buttons to display of none until the game starts
+document.getElementById('rock').style.display = 'none';
+document.getElementById('paper').style.display = 'none';
+document.getElementById('scissors').style.display = 'none';
+
+// The comp buttons will only show what the computer chooses
+document.getElementById('comp-choice').style.display = 'none';
 
 // Update the DOM with computer selection
 function getComputerChoice() {
@@ -14,6 +21,10 @@ function getComputerChoice() {
 // Turn these into functions with possible outcomes (2 each)
 document.getElementById('rock').addEventListener('click', function () {
     const computerSelection = getComputerChoice();
+    document.getElementById('comp-choice').style.display = 'block';
+    document.getElementById('comp-choice').innerHTML = `The computer picked: ${
+        computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)
+    }`;
     if (computerSelection == 'paper') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
@@ -27,6 +38,10 @@ document.getElementById('rock').addEventListener('click', function () {
 
 document.getElementById('paper').addEventListener('click', function () {
     const computerSelection = getComputerChoice();
+    document.getElementById('comp-choice').style.display = 'block';
+    document.getElementById('comp-choice').innerHTML = `The computer picked: ${
+        computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)
+    }`;
     if (computerSelection == 'rock') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, paper covers rock.";
@@ -40,6 +55,10 @@ document.getElementById('paper').addEventListener('click', function () {
 
 document.getElementById('scissors').addEventListener('click', function () {
     const computerSelection = getComputerChoice();
+    document.getElementById('comp-choice').style.display = 'block';
+    document.getElementById('comp-choice').innerHTML = `The computer picked: ${
+        computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)
+    }`;
     if (computerSelection == 'rock') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
@@ -90,16 +109,18 @@ document.getElementById('scissors').addEventListener('click', function () {
 } */
 
 function game() {
+    // When the user clicks the start button it goes away
     document.querySelector('.start-game').style.display = "none";
-    while (playerScore < 5 && computerScore < 5) {
-        playRound();
-    }
+    // And the RPS buttons display
+    document.getElementById('rock').style.display = 'block';
+    document.getElementById('paper').style.display = 'block';
+    document.getElementById('scissors').style.display = 'block';
     if (playerScore == 5) {
         document.querySelector('.result').textContent = "You're the winner!!!";
-        document.querySelector('.reset-game').style.display = "flex";
+        document.querySelector('.reset-game').style.display = "block";
     } else if (computerScore == 5) {
         document.querySelector('.result').textContent = "You are a total loser..";
-        document.querySelector('.reset-game').style.display = "flex";
+        document.querySelector('.reset-game').style.display = "block";
     } 
 }
 
