@@ -24,9 +24,24 @@ function endGame() {
     document.getElementById('paper').style.display = 'none';
     document.getElementById('scissors').style.display = 'none';
     document.getElementById('comp-choice').style.display = 'none';
-    document.querySelector('.start-game').style.display = 'block';
+    document.querySelector('.start-game').style.display = 'flex';
     playerScore = 0;
     computerScore = 0;
+    document.getElementById('player-score').innerHTML = `Computer's score is: ${computerScore}`;
+    document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
+}
+
+// This will check to see if there is a winner
+
+function checkWinner() {
+    // Make so that the game stops at 5 points
+    if (playerScore == 5) {
+        endGame();
+        document.querySelector('.result').textContent = "Congrats! You're the winner!!!"; 
+    } else if (computerScore == 5) {
+        endGame();
+        document.querySelector('.result').textContent = "Wow, you're a loser..";
+    } 
 }
 
 
@@ -45,10 +60,12 @@ document.getElementById('rock').addEventListener('click', function () {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
         document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
+        checkWinner();
     } else if (computerSelection == 'scissors') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, rock crushes scissors.";
         document.getElementById('player-score').innerHTML = `Your score is: ${playerScore}`;
+        checkWinner();
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
@@ -62,10 +79,12 @@ document.getElementById('paper').addEventListener('click', function () {
         playerScore++;
         document.querySelector('.result').textContent = "You win, paper covers rock.";
         document.getElementById('player-score').innerHTML = `Your score is: ${playerScore}`;
+        checkWinner();
     } else if (computerSelection == 'scissors') {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, scissors cuts paper.";
         document.getElementById('computer-score').innerHTML = `Computer's score is: ${computerScore}`;
+        checkWinner();
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
@@ -79,10 +98,12 @@ document.getElementById('scissors').addEventListener('click', function () {
         computerScore++;
         document.querySelector('.result').textContent = "You lose, paper covers rock.";
         document.getElementById('computer-score').innerHTML = `Your score is: ${computerScore}`;
+        checkWinner();
     } else if (computerSelection == 'paper') {
         playerScore++;
         document.querySelector('.result').textContent = "You win, scissors cuts paper.";
         document.getElementById('player-score').innerHTML = `Computer's score is: ${playerScore}`;
+        checkWinner();
     } else document.querySelector('.result').textContent = "It's a tie, go again.";
 });
 
@@ -94,15 +115,8 @@ function game() {
     document.getElementById('rock').style.display = 'block';
     document.getElementById('paper').style.display = 'block';
     document.getElementById('scissors').style.display = 'block';
-    // Make so that the game stops at 5 points
-     if (playerScore == '5') {
-        endGame();
-        document.querySelector('.result').textContent = "Congrats! You're the winner!!!"; 
-    } else if (computerScore == '5') {
-        endGame();
-        document.querySelector('.result').textContent = "Wow, you're a loser..";
-    } 
 }
+
 
 
 function resetGame() {
