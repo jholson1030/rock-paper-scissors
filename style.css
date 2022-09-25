@@ -37,7 +37,6 @@ body {
 .player {
     display: flex;
     justify-content: center;
-    border-top: solid white 2px;
     padding-top: 20px;
 }
 
@@ -64,3 +63,12 @@ button {
     font-size: 16px;
 }
 
+#rock, #paper, #scissors, .start-game {
+    transition: all .2s ease-in-out;
+}
+
+#rock:hover, #paper:hover, #scissors:hover, .start-game:hover {
+    transform: scale(1.2);
+    color: red;
+    border: solid red 4px;
+}
