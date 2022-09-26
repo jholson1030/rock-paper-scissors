@@ -79,7 +79,10 @@ button {
 }
 
 #rock:hover, #paper:hover, #scissors:hover, .start-game:hover {
-    transform: sc   transition: all .2s ease-in-out; red 4px;
+    transform: scale(1.2);
+    color: red;
+    border: solid red 4px;   
+    
 }
 
 .score-board {
@@ -96,6 +99,8 @@ button {
     padding-top: 50px;
 }
 
+/* This keeps the footer at the bottom */
+
 .footer {
     display: flex;
     justify-content: center;
@@ -105,6 +110,7 @@ button {
     width: 100%;
     height: 2.5rem;
     margin: 0;
+    margin-bottom: 5px;
 }
 
 .github-link {
