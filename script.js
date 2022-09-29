@@ -109,6 +109,8 @@ document.getElementById('scissors').addEventListener('click', function () {
 function game() {
     // When the user clicks the start button it goes away
     document.querySelector('.start-game').style.display = 'none';
+    // The scoreboard appears
+    document.querySelector('.score-board').style.display = 'flex';
     // And the RPS buttons display
     document.getElementById('rock').style.display = 'block';
     document.getElementById('paper').style.display = 'block';
