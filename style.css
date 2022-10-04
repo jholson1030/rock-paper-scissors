@@ -80,8 +80,8 @@ button {
 
 #rock:hover, #paper:hover, #scissors:hover, .start-game:hover {
     transform: scale(1.2);
-    color: red;
-    border: solid red 4px;   
+    color: firebrick;
+    border: solid firebrick 4px;   
     
 }
 
@@ -117,4 +117,10 @@ button {
 .github-link {
     color: white;
     font-size: 22px;
+    transition: all .2s ease-in-out;
+}
+
+.github-link:hover {
+    transform: scale(1.2);
+    color: firebrick;
 }
